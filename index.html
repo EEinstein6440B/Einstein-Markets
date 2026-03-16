@@ -316,6 +316,174 @@
   .skel-line.w80 { width: 80%; }
   .skel-line.w60 { width: 60%; }
   .skel-line.w90 { width: 90%; }
+
+  /* Clickable tickers */
+  .ticker-chip { cursor: pointer; transition: background 0.15s, border-color 0.15s; }
+  .ticker-chip:active { background: var(--bg-card-hover); border-color: var(--border-light); }
+  .ticker-card { cursor: pointer; transition: background 0.15s, border-color 0.15s; }
+  .ticker-card:active { background: var(--bg-card-hover); border-color: var(--border-light); }
+  .pulse-item { cursor: pointer; transition: background 0.15s; }
+  .pulse-item:active { background: var(--bg-elevated); }
+
+  /* ===== TICKER DETAIL MODAL ===== */
+  .detail-overlay {
+    position: fixed; top: 0; left: 0; right: 0; bottom: 0; z-index: 200;
+    background: var(--bg);
+    overflow-y: auto; -webkit-overflow-scrolling: touch;
+    transform: translateX(100%);
+    transition: transform 0.28s cubic-bezier(0.32, 0.72, 0, 1);
+  }
+  .detail-overlay.open { transform: translateX(0); }
+
+  .detail-header {
+    position: sticky; top: 0; z-index: 10;
+    background: rgba(10, 14, 23, 0.9);
+    backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
+    padding: 14px 16px;
+    display: flex; align-items: center; gap: 12px;
+  }
+  .detail-back {
+    background: none; border: none; color: var(--blue); font-size: 14px;
+    cursor: pointer; display: flex; align-items: center; gap: 4px;
+    padding: 6px 0; font-weight: 500;
+  }
+  .detail-back svg { width: 18px; height: 18px; }
+  .detail-sym { font-size: 18px; font-weight: 700; }
+  .detail-name { font-size: 13px; color: var(--text-muted); margin-left: auto; }
+
+  .detail-body { padding: 20px 16px 100px; max-width: 640px; margin: 0 auto; }
+
+  /* Price hero */
+  .price-hero { margin-bottom: 24px; }
+  .price-hero .current {
+    font-family: 'JetBrains Mono', monospace; font-size: 36px; font-weight: 600;
+  }
+  .price-hero .change-line {
+    display: flex; align-items: center; gap: 8px; margin-top: 4px;
+  }
+  .price-hero .change-amt {
+    font-family: 'JetBrains Mono', monospace; font-size: 15px; font-weight: 600;
+  }
+  .price-hero .change-amt.up { color: var(--green); }
+  .price-hero .change-amt.down { color: var(--red); }
+  .price-hero .change-pct {
+    font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 600;
+    padding: 3px 8px; border-radius: 6px;
+  }
+  .price-hero .change-pct.up { color: var(--green); background: var(--green-bg); }
+  .price-hero .change-pct.down { color: var(--red); background: var(--red-bg); }
+
+  /* Stats row */
+  .stats-grid {
+    display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; margin-bottom: 24px;
+  }
+  .stat-box {
+    background: var(--bg-card); border: 1px solid var(--border);
+    border-radius: 10px; padding: 12px; text-align: center;
+  }
+  .stat-box .stat-label {
+    font-size: 10px; font-weight: 600; text-transform: uppercase;
+    letter-spacing: 0.5px; color: var(--text-faint); margin-bottom: 4px;
+  }
+  .stat-box .stat-val {
+    font-family: 'JetBrains Mono', monospace; font-size: 14px; font-weight: 500;
+  }
+
+  /* Thesis box */
+  .thesis-box {
+    background: var(--bg-elevated); border: 1px solid var(--border-light);
+    border-radius: 12px; padding: 14px 16px; margin-bottom: 24px;
+  }
+  .thesis-box .thesis-label {
+    font-size: 10px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 1px; color: var(--blue); margin-bottom: 6px;
+  }
+  .thesis-box .thesis-text {
+    font-family: 'Newsreader', serif; font-size: 14px; line-height: 1.6;
+    color: var(--text-dim);
+  }
+
+  /* Detail section label */
+  .detail-section-label {
+    font-size: 12px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 1px; color: var(--text-faint); margin: 24px 0 12px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .detail-section-label::after {
+    content: ''; flex: 1; height: 1px; background: var(--border);
+  }
+
+  .detail-loading {
+    text-align: center; padding: 32px; color: var(--text-faint); font-size: 13px;
+  }
+
+  /* ===== AI ANALYSIS BOX ===== */
+  .analysis-box {
+    border-radius: 12px; padding: 16px; margin-bottom: 20px;
+    border: 1px solid var(--border);
+  }
+  .analysis-box.strong_buy { background: var(--green-bg); border-color: var(--green-border); }
+  .analysis-box.buy { background: rgba(34,197,94,0.06); border-color: rgba(34,197,94,0.15); }
+  .analysis-box.neutral { background: var(--bg-elevated); border-color: var(--border-light); }
+  .analysis-box.caution { background: rgba(234,179,8,0.06); border-color: rgba(234,179,8,0.15); }
+  .analysis-box.bearish { background: var(--red-bg); border-color: var(--red-border); }
+
+  .analysis-signal {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 13px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.5px; margin-bottom: 8px;
+  }
+  .analysis-signal .signal-dot {
+    width: 10px; height: 10px; border-radius: 50%;
+  }
+  .analysis-signal.strong_buy, .analysis-signal.buy { color: var(--green); }
+  .analysis-signal.strong_buy .signal-dot, .analysis-signal.buy .signal-dot { background: var(--green); }
+  .analysis-signal.neutral { color: var(--text-dim); }
+  .analysis-signal.neutral .signal-dot { background: var(--text-dim); }
+  .analysis-signal.caution { color: var(--gold); }
+  .analysis-signal.caution .signal-dot { background: var(--gold); }
+  .analysis-signal.bearish { color: var(--red); }
+  .analysis-signal.bearish .signal-dot { background: var(--red); }
+
+  .analysis-commentary {
+    font-family: 'Newsreader', serif; font-size: 14px; line-height: 1.6;
+    color: var(--text-dim);
+  }
+
+  .analysis-meta {
+    font-size: 11px; color: var(--text-faint); margin-top: 10px;
+    display: flex; align-items: center; gap: 6px;
+  }
+  .analysis-meta svg { width: 12px; height: 12px; opacity: 0.5; }
+
+  /* Analyst consensus bar */
+  .consensus-bar {
+    display: flex; height: 6px; border-radius: 3px; overflow: hidden;
+    margin: 10px 0 6px; gap: 2px;
+  }
+  .consensus-bar .seg { border-radius: 2px; }
+  .consensus-bar .seg.sb { background: #16a34a; }
+  .consensus-bar .seg.b { background: #22c55e; }
+  .consensus-bar .seg.h { background: #94a3b8; }
+  .consensus-bar .seg.s { background: #f87171; }
+  .consensus-bar .seg.ss { background: #dc2626; }
+  .consensus-labels {
+    display: flex; justify-content: space-between; font-size: 10px; color: var(--text-faint);
+  }
+
+  /* Market mood banner on briefing page */
+  .mood-banner {
+    border-radius: 12px; padding: 14px 16px; margin-bottom: 20px;
+    display: flex; align-items: center; gap: 12px;
+  }
+  .mood-banner.bullish, .mood-banner.leaning_bullish { background: var(--green-bg); border: 1px solid var(--green-border); }
+  .mood-banner.bearish, .mood-banner.leaning_bearish { background: var(--red-bg); border: 1px solid var(--red-border); }
+  .mood-banner.mixed { background: var(--bg-elevated); border: 1px solid var(--border-light); }
+  .mood-banner .mood-icon { font-size: 28px; }
+  .mood-banner .mood-text { flex: 1; }
+  .mood-banner .mood-label { font-size: 14px; font-weight: 700; }
+  .mood-banner .mood-detail { font-size: 12px; color: var(--text-dim); margin-top: 2px; }
 </style>
 </head>
 <body>
@@ -357,12 +525,12 @@
 
   <!-- Market Pulse Strip -->
   <div class="pulse-strip" id="pulseStrip">
-    <div class="pulse-item"><div class="pulse-label">S&P 500</div><div class="pulse-val" id="p-spy">—</div><div class="pulse-chg" id="pc-spy">&nbsp;</div></div>
-    <div class="pulse-item"><div class="pulse-label">NASDAQ</div><div class="pulse-val" id="p-qqq">—</div><div class="pulse-chg" id="pc-qqq">&nbsp;</div></div>
-    <div class="pulse-item"><div class="pulse-label">VIX</div><div class="pulse-val" id="p-vix">—</div><div class="pulse-chg" id="pc-vix">&nbsp;</div></div>
-    <div class="pulse-item"><div class="pulse-label">BTC</div><div class="pulse-val" id="p-btc">—</div><div class="pulse-chg" id="pc-btc">&nbsp;</div></div>
-    <div class="pulse-item"><div class="pulse-label">Gold</div><div class="pulse-val" id="p-gold">—</div><div class="pulse-chg" id="pc-gold">&nbsp;</div></div>
-    <div class="pulse-item"><div class="pulse-label">Oil</div><div class="pulse-val" id="p-oil">—</div><div class="pulse-chg" id="pc-oil">&nbsp;</div></div>
+    <div class="pulse-item" onclick="openDetail('SPY')"><div class="pulse-label">S&P 500</div><div class="pulse-val" id="p-spy">—</div><div class="pulse-chg" id="pc-spy">&nbsp;</div></div>
+    <div class="pulse-item" onclick="openDetail('QQQ')"><div class="pulse-label">NASDAQ</div><div class="pulse-val" id="p-qqq">—</div><div class="pulse-chg" id="pc-qqq">&nbsp;</div></div>
+    <div class="pulse-item" onclick="openDetail('UVXY')"><div class="pulse-label">VIX</div><div class="pulse-val" id="p-vix">—</div><div class="pulse-chg" id="pc-vix">&nbsp;</div></div>
+    <div class="pulse-item" onclick="openDetail('BTC')"><div class="pulse-label">BTC</div><div class="pulse-val" id="p-btc">—</div><div class="pulse-chg" id="pc-btc">&nbsp;</div></div>
+    <div class="pulse-item" onclick="openDetail('Gold')"><div class="pulse-label">Gold</div><div class="pulse-val" id="p-gold">—</div><div class="pulse-chg" id="pc-gold">&nbsp;</div></div>
+    <div class="pulse-item" onclick="openDetail('Oil')"><div class="pulse-label">Oil</div><div class="pulse-val" id="p-oil">—</div><div class="pulse-chg" id="pc-oil">&nbsp;</div></div>
   </div>
 
   <div class="container">
@@ -371,6 +539,9 @@
     <div id="tab-briefing" class="tab-content active">
       <div class="briefing-date" id="briefingDate"></div>
       <div class="briefing-greeting" id="briefingGreeting">Loading your briefing...</div>
+
+      <!-- Market Mood Banner -->
+      <div id="moodBanner"></div>
 
       <!-- Big Movers (dynamically populated) -->
       <div id="bigMovers"></div>
@@ -447,6 +618,29 @@
     </div>
   </div>
 
+  <!-- Ticker Detail Overlay -->
+  <div class="detail-overlay" id="detailOverlay">
+    <div class="detail-header">
+      <button class="detail-back" onclick="closeDetail()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M15 18l-6-6 6-6"/></svg>
+        Back
+      </button>
+      <span class="detail-sym" id="detailSym"></span>
+      <span class="detail-name" id="detailName"></span>
+    </div>
+    <div class="detail-body">
+      <div class="price-hero" id="detailPriceHero"></div>
+      <div class="stats-grid" id="detailStats"></div>
+      <div class="thesis-box" id="detailThesis" style="display:none;">
+        <div class="thesis-label">Investment Thesis</div>
+        <div class="thesis-text" id="detailThesisText"></div>
+      </div>
+      <div id="detailAnalysis"></div>
+      <div class="detail-section-label">Latest News</div>
+      <div id="detailNews"><div class="detail-loading">Loading news...</div></div>
+    </div>
+  </div>
+
   <!-- Bottom Nav -->
   <div class="bottom-nav">
     <button class="nav-item active" data-tab="briefing" onclick="switchTab('briefing')">
@@ -497,6 +691,24 @@ const CRYPTO = [
 ];
 const ALL_STOCKS = [...CORE5, ...RADAR, ...ENERGY];
 
+// Investment theses for detail view
+const THESES = {
+  NVDA: "The undisputed king of AI GPUs. $500B+ in Blackwell/Rubin revenue pipeline visibility through end of 2026. Data center revenue up 75% YoY. Vera Rubin chip (10x perf/watt) ships H2 2026. Morningstar fair value $240. Risk: zero China revenue in guidance, architecture transitions can compress margins.",
+  MU: "One of only three companies in the world making HBM (high-bandwidth memory) — every AI GPU needs it. Entire 2026 HBM output sold out. Forward P/E of ~7x with 300% EPS growth. HBM TAM forecast to hit $100B by 2028, two years earlier than expected. Arguably the most undervalued AI play.",
+  DELL: "$43B AI server backlog, $64B total AI orders for the year. AI server revenue exploded 342% to $9B in Q4. Raised long-term revenue growth to 7-9% annually. Risk: margin pressure from rising DRAM/NAND costs and China supply chain restructuring.",
+  AMD: "The inference play. MI355X delivers 30% faster inference than Nvidia B200 on Llama 3.1 with ~40% better tokens-per-dollar. OpenAI taking up to 10% stake and committing up to 6GW of AMD GPUs (~$200B+). Meta also on board. 4% data center GPU market share, up from 2%.",
+  TSM: "Controls ~70% of global semiconductor foundry market. Every chip from Nvidia, AMD, Apple, Qualcomm runs through their fabs. AI chip revenue growing at 60% CAGR through 2029. 63-65% gross margins. Discount is entirely Taiwan geopolitical risk — mitigating via Japan and Arizona expansion.",
+  AVGO: "Designs custom AI ASICs for Google, Meta, and others. Jericho3-AI switch platform becoming standard in AI clusters. A less volatile way to play the custom silicon trend.",
+  VRT: "Power and cooling for AI data centers. The boring-but-essential play. Co-engineers cooling for Nvidia superclusters. As Blackwell and Rubin push power density higher, liquid cooling becomes mandatory — Vertiv's high-density units command better margins.",
+  MRVL: "Custom silicon for AWS and Microsoft hitting volume production on 3nm. Management guides custom ASIC revenue to double within two years. Pure play on the 'hyperscalers building their own chips' trend.",
+  ANET: "The networking backbone of AI data centers. 42.7% EBITDA margin, consistent earnings beats. As AI clusters scale, the networking fabric between GPUs becomes the bottleneck — that's Arista's sweet spot.",
+  CLS: "AI hardware manufacturing. 223% one-year return with 65% projected EPS growth. Less well-known but deeply embedded in the AI supply chain.",
+  XOM: "Oil supermajor with upstream exposure. Benefits directly from geopolitical energy disruptions. Diversified portfolio across exploration, production, refining.",
+  CVX: "Geopolitical energy play and Berkshire Hathaway holding. Buffett added 8M+ shares recently. Declared force majeure at Leviathan gas field (Israel). Secured exclusive rights on Iraq's West Qurna 2 oilfield (450K bpd). Up 27% YTD.",
+  BTC: "Digital gold thesis gaining traction — showed real decoupling during March 2026 crisis (rose 3.7% while S&P hit lows). Institutional adoption accelerating through ETFs. Macro hedge against inflation and currency debasement.",
+  ETH: "The smart contract and DeFi ecosystem backbone. Benefits from institutional crypto adoption and growing L2 scaling solutions. Staking yield provides passive return floor.",
+};
+
 // Keyword sets for categorizing news
 const KW_AI = ['nvidia','nvda','micron','amd','tsmc','dell','broadcom','avgo','vertiv','marvell','arista','celestica','gpu','ai chip','data center','artificial intelligence','machine learning','hbm','inference','semiconductor','foundry'];
 const KW_ENERGY = ['oil','crude','opec','exxon','chevron','xom','cvx','natural gas','petroleum','refinery','pipeline','energy','brent','wti','drilling'];
@@ -508,6 +720,100 @@ let apiKey = '';
 let refreshTimer = null;
 let allQuotes = {};
 let allNews = [];
+let briefingData = null;
+
+// Fetch the AI-generated briefing from GitHub Pages
+async function fetchBriefing() {
+  try {
+    const r = await fetch('data/briefing.json?_=' + Date.now());
+    if (!r.ok) return null;
+    briefingData = await r.json();
+    renderMoodBanner();
+    return briefingData;
+  } catch(e) { console.log('No briefing data yet'); return null; }
+}
+
+function renderMoodBanner() {
+  const el = document.getElementById('moodBanner');
+  if (!briefingData || !briefingData.marketMood) { el.innerHTML = ''; return; }
+
+  const moods = {
+    bullish: { icon: '🟢', label: 'Market Mood: Bullish', detail: 'Majority of your watchlist showing positive signals' },
+    leaning_bullish: { icon: '🟢', label: 'Market Mood: Leaning Bullish', detail: 'More green than red across your positions' },
+    mixed: { icon: '🟡', label: 'Market Mood: Mixed', detail: 'Split signals — selective opportunities' },
+    leaning_bearish: { icon: '🔴', label: 'Market Mood: Leaning Bearish', detail: 'Caution warranted — more positions under pressure' },
+    bearish: { icon: '🔴', label: 'Market Mood: Bearish', detail: 'Defensive posture — most signals negative' },
+  };
+  const m = moods[briefingData.marketMood] || moods.mixed;
+  const s = briefingData.moodSummary;
+  const genTime = new Date(briefingData.generated);
+  const timeStr = genTime.toLocaleString('en-US', { month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit' });
+
+  el.innerHTML = `<div class="mood-banner ${briefingData.marketMood}">
+    <div class="mood-icon">${m.icon}</div>
+    <div class="mood-text">
+      <div class="mood-label">${m.label}</div>
+      <div class="mood-detail">${s.bullish} bullish · ${s.bearish} bearish · ${s.neutral} neutral — as of ${timeStr}</div>
+    </div>
+  </div>`;
+}
+
+function getAnalysisForSymbol(sym) {
+  if (!briefingData) return null;
+  const all = [...(briefingData.stocks || []), ...(briefingData.crypto || [])];
+  return all.find(s => s.symbol === sym) || null;
+}
+
+function renderAnalysisBox(sym) {
+  const el = document.getElementById('detailAnalysis');
+  const a = getAnalysisForSymbol(sym);
+  if (!a || !a.commentary) { el.innerHTML = ''; return; }
+
+  const signalNames = {
+    strong_buy: 'Strong Buy Signal', buy: 'Buy Signal',
+    neutral: 'Neutral', caution: 'Caution', bearish: 'Bearish Signal',
+  };
+
+  const genTime = new Date(briefingData.generated);
+  const timeStr = genTime.toLocaleString('en-US', { month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit' });
+
+  let consensusHTML = '';
+  if (a.analystConsensus) {
+    const c = a.analystConsensus;
+    const total = c.strongBuy + c.buy + c.hold + c.sell + c.strongSell;
+    if (total > 0) {
+      consensusHTML = `
+        <div class="consensus-bar">
+          <div class="seg sb" style="flex:${c.strongBuy}"></div>
+          <div class="seg b" style="flex:${c.buy}"></div>
+          <div class="seg h" style="flex:${c.hold}"></div>
+          <div class="seg s" style="flex:${c.sell}"></div>
+          <div class="seg ss" style="flex:${c.strongSell}"></div>
+        </div>
+        <div class="consensus-labels">
+          <span>Strong Buy ${c.strongBuy}</span>
+          <span>Buy ${c.buy}</span>
+          <span>Hold ${c.hold}</span>
+          <span>Sell ${c.sell + c.strongSell}</span>
+        </div>`;
+    }
+  }
+
+  el.innerHTML = `
+    <div class="detail-section-label">Daily Analysis</div>
+    <div class="analysis-box ${a.signal}">
+      <div class="analysis-signal ${a.signal}">
+        <span class="signal-dot"></span>
+        ${signalNames[a.signal] || 'Neutral'}
+      </div>
+      <div class="analysis-commentary">${a.commentary}</div>
+      ${consensusHTML}
+      <div class="analysis-meta">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        Updated ${timeStr} · ${briefingData.briefingType === 'morning' ? 'Morning' : 'Afternoon'} briefing
+      </div>
+    </div>`;
+}
 
 // ========== INIT ==========
 function init() {
@@ -631,10 +937,11 @@ function renderPulse(id, price, pct) {
   chgEl.className = 'pulse-chg ' + chgClass(pct);
 }
 
-function tickerChipHTML(sym, name, price, pct, prefix) {
+function tickerChipHTML(sym, name, price, pct, prefix, clickable) {
   prefix = prefix || '$';
   const cls = chgClass(pct);
-  return `<div class="ticker-chip">
+  const onclick = clickable !== false ? ` onclick="openDetail('${sym}')"` : '';
+  return `<div class="ticker-chip"${onclick}>
     <span class="sym">${sym}</span>
     <span class="price">${prefix}${fmt(price)}</span>
     <span class="chg ${cls}">${chgStr(pct)}</span>
@@ -644,7 +951,7 @@ function tickerChipHTML(sym, name, price, pct, prefix) {
 function tickerCardHTML(sym, name, thesis, price, pct, prefix) {
   prefix = prefix || '$';
   const cls = chgClass(pct);
-  return `<div class="ticker-card">
+  return `<div class="ticker-card" onclick="openDetail('${sym}')">
     <div class="sym-row"><span class="sym">${sym}</span>${thesis ? `<span class="thesis">${thesis}</span>` : ''}</div>
     <div class="name">${name}</div>
     <div class="price">${price != null ? prefix + fmt(price) : '—'}</div>
@@ -856,6 +1163,9 @@ async function refreshAll() {
     document.getElementById('lastUpdated').textContent = `Updated ${now.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit' })}`;
     updateMarketStatus();
 
+    // Fetch AI briefing data
+    await fetchBriefing();
+
   } catch(e) {
     console.error('Refresh error:', e);
   } finally {
@@ -872,6 +1182,183 @@ function updateMarketStatus() {
   if (isOpen) { dot.classList.add('open'); label.textContent = 'Market Open'; }
   else { dot.classList.remove('open'); label.textContent = day >= 1 && day <= 5 && time < 570 ? 'Pre-Market' : 'Market Closed'; }
 }
+
+// ========== DETAIL VIEW ==========
+const DETAIL_NAMES = {};
+[...CORE5, ...RADAR, ...ENERGY].forEach(s => DETAIL_NAMES[s.symbol] = s.name);
+CRYPTO.forEach(c => { DETAIL_NAMES[c.symbol] = c.name; DETAIL_NAMES[c.cgId] = c.name; });
+DETAIL_NAMES['SPY'] = 'S&P 500 ETF';
+DETAIL_NAMES['QQQ'] = 'NASDAQ 100 ETF';
+DETAIL_NAMES['UVXY'] = 'VIX Volatility';
+DETAIL_NAMES['Gold'] = 'Gold (XAU/USD)';
+DETAIL_NAMES['Oil'] = 'Brent Crude Oil';
+
+// Map display symbols to Finnhub symbols for news
+const NEWS_SYMBOL_MAP = {
+  'SPY': 'SPY', 'QQQ': 'QQQ', 'UVXY': null,
+  'BTC': null, 'ETH': null,
+  'Gold': null, 'Oil': null,
+};
+
+function getQuoteForDetail(sym) {
+  // Check stock quotes
+  if (allQuotes[sym]) return allQuotes[sym];
+  // Check mapped names
+  if (sym === 'Gold' && allQuotes['gold']) return allQuotes['gold'];
+  if (sym === 'Oil' && allQuotes['oil']) return allQuotes['oil'];
+  return null;
+}
+
+async function openDetail(sym) {
+  const overlay = document.getElementById('detailOverlay');
+  const name = DETAIL_NAMES[sym] || sym;
+
+  // Set header
+  document.getElementById('detailSym').textContent = sym;
+  document.getElementById('detailName').textContent = name;
+
+  // Get quote
+  const q = getQuoteForDetail(sym);
+  const prefix = '$';
+
+  // Price hero
+  const heroEl = document.getElementById('detailPriceHero');
+  if (q && q.price != null) {
+    const cls = chgClass(q.pct);
+    const changeAmt = q.change != null ? (q.change >= 0 ? '+' : '') + q.change.toFixed(2) : '';
+    heroEl.innerHTML = `
+      <div class="current">${prefix}${fmt(q.price)}</div>
+      <div class="change-line">
+        ${changeAmt ? `<span class="change-amt ${cls}">${prefix}${changeAmt}</span>` : ''}
+        ${q.pct != null ? `<span class="change-pct ${cls}">${q.pct >= 0 ? '+' : ''}${q.pct.toFixed(2)}%</span>` : ''}
+        <span style="font-size:12px;color:var(--text-faint);">Today</span>
+      </div>`;
+  } else {
+    heroEl.innerHTML = `<div class="current" style="color:var(--text-muted);">Price unavailable</div>`;
+  }
+
+  // Stats
+  const statsEl = document.getElementById('detailStats');
+  if (q && q.high != null) {
+    statsEl.innerHTML = `
+      <div class="stat-box"><div class="stat-label">Open</div><div class="stat-val">${prefix}${fmt(q.open)}</div></div>
+      <div class="stat-box"><div class="stat-label">High</div><div class="stat-val">${prefix}${fmt(q.high)}</div></div>
+      <div class="stat-box"><div class="stat-label">Low</div><div class="stat-val">${prefix}${fmt(q.low)}</div></div>
+      <div class="stat-box"><div class="stat-label">Prev Close</div><div class="stat-val">${prefix}${fmt(q.pc)}</div></div>
+      <div class="stat-box"><div class="stat-label">Change</div><div class="stat-val" style="color:${q.pct >= 0 ? 'var(--green)' : 'var(--red)'}">${q.pct >= 0 ? '+' : ''}${q.pct?.toFixed(2)}%</div></div>
+      <div class="stat-box"><div class="stat-label">Range</div><div class="stat-val" style="font-size:11px;">${prefix}${fmt(q.low)}-${fmt(q.high)}</div></div>`;
+  } else if (q) {
+    statsEl.innerHTML = `
+      <div class="stat-box"><div class="stat-label">Price</div><div class="stat-val">${prefix}${fmt(q.price)}</div></div>
+      <div class="stat-box"><div class="stat-label">24h Change</div><div class="stat-val" style="color:${q.pct >= 0 ? 'var(--green)' : 'var(--red)'}">${q.pct >= 0 ? '+' : ''}${q.pct?.toFixed(2)}%</div></div>
+      <div class="stat-box"><div class="stat-label">Updated</div><div class="stat-val" style="font-size:11px;">Just now</div></div>`;
+  } else {
+    statsEl.innerHTML = '';
+  }
+
+  // Thesis
+  const thesisBox = document.getElementById('detailThesis');
+  const thesisText = document.getElementById('detailThesisText');
+  if (THESES[sym]) {
+    thesisBox.style.display = 'block';
+    thesisText.textContent = THESES[sym];
+  } else {
+    thesisBox.style.display = 'none';
+  }
+
+  // Render AI analysis if available
+  renderAnalysisBox(sym);
+
+  // Show overlay with animation
+  overlay.classList.add('open');
+  document.body.style.overflow = 'hidden';
+
+  // Load news
+  const newsEl = document.getElementById('detailNews');
+  newsEl.innerHTML = '<div class="detail-loading">Loading news...</div>';
+
+  // Determine how to fetch news for this symbol
+  let articles = [];
+  const stockSymbols = [...CORE5, ...RADAR, ...ENERGY].map(s => s.symbol);
+
+  if (stockSymbols.includes(sym) || sym === 'SPY' || sym === 'QQQ') {
+    // Direct company news from Finnhub
+    articles = await fhCompanyNews(sym);
+  } else if (sym === 'BTC' || sym === 'ETH') {
+    // Search general news for crypto keywords
+    const general = await fhGeneralNews();
+    const cryptoKw = sym === 'BTC' ? ['bitcoin', 'btc'] : ['ethereum', 'eth'];
+    articles = (general || []).filter(a =>
+      matchesKeywords((a.headline || '') + ' ' + (a.summary || ''), cryptoKw)
+    );
+  } else if (sym === 'Gold') {
+    const general = await fhGeneralNews();
+    articles = (general || []).filter(a =>
+      matchesKeywords((a.headline || '') + ' ' + (a.summary || ''), ['gold', 'precious metal', 'bullion', 'xau'])
+    );
+  } else if (sym === 'Oil') {
+    const general = await fhGeneralNews();
+    articles = (general || []).filter(a =>
+      matchesKeywords((a.headline || '') + ' ' + (a.summary || ''), ['oil', 'crude', 'brent', 'wti', 'opec', 'petroleum'])
+    );
+  } else if (sym === 'UVXY') {
+    const general = await fhGeneralNews();
+    articles = (general || []).filter(a =>
+      matchesKeywords((a.headline || '') + ' ' + (a.summary || ''), ['vix', 'volatility', 'fear', 'cboe'])
+    );
+  } else {
+    articles = await fhCompanyNews(sym);
+  }
+
+  // Deduplicate
+  const seen = new Set();
+  const unique = (articles || []).filter(a => {
+    const key = (a.headline || '').toLowerCase().slice(0, 50);
+    if (seen.has(key)) return false;
+    seen.add(key);
+    return true;
+  }).sort((a, b) => b.datetime - a.datetime);
+
+  if (unique.length === 0) {
+    newsEl.innerHTML = '<div class="detail-loading">No recent news for this ticker.</div>';
+  } else {
+    newsEl.innerHTML = unique.slice(0, 10).map(a => {
+      const combined = (a.headline || '') + ' ' + (a.summary || '');
+      const tags = tagHTML(combined);
+      const time = new Date(a.datetime * 1000);
+      const timeStr = time.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit' });
+      const dateStr = time.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+      return `<a href="${a.url}" target="_blank" rel="noopener" class="story-card">
+        ${tags ? `<div class="story-tags">${tags}</div>` : ''}
+        <div class="story-headline">${a.headline}</div>
+        ${a.summary ? `<div class="story-summary">${a.summary}</div>` : ''}
+        <div class="story-meta">
+          <span>${a.source}</span><span class="dot"></span><span>${dateStr} ${timeStr}</span>
+        </div>
+      </a>`;
+    }).join('');
+  }
+}
+
+function closeDetail() {
+  const overlay = document.getElementById('detailOverlay');
+  overlay.classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+// Handle back button / swipe
+window.addEventListener('popstate', () => {
+  if (document.getElementById('detailOverlay').classList.contains('open')) {
+    closeDetail();
+  }
+});
+
+// Push state when opening detail so back button works
+const origOpenDetail = openDetail;
+openDetail = async function(sym) {
+  history.pushState({ detail: sym }, '');
+  await origOpenDetail(sym);
+};
 
 // ========== SERVICE WORKER ==========
 if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js').catch(() => {});

@@ -1,0 +1,36 @@
+name: Market Briefing Update
+
+on:
+  schedule:
+    # 6:00 AM ET (11:00 UTC) and 4:00 PM ET (21:00 UTC) on weekdays
+    - cron: '0 11 * * 1-5'
+    - cron: '0 21 * * 1-5'
+  workflow_dispatch: # Allow manual trigger
+
+permissions:
+  contents: write
+
+jobs:
+  update-briefing:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Generate market briefing
+        env:
+          FINNHUB_KEY: ${{ secrets.FINNHUB_KEY }}
+        run: node scripts/generate-briefing.js
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name "Einstein Markets Bot"
+          git config user.email "bot@einstein-markets.app"
+          git add data/briefing.json
+          git diff --staged --quiet || git commit -m "Update market briefing $(date -u '+%Y-%m-%d %H:%M UTC')"
+          git push
