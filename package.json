@@ -1,0 +1,21 @@
+{
+  "name": "einstein-markets-v2",
+  "version": "2.0.0",
+  "description": "AI-powered financial dashboard PWA",
+  "type": "module",
+  "scripts": {
+    "generate-briefing": "node scripts/generate-briefing.js",
+    "dev": "http-server",
+    "build": "echo 'No build step required for static PWA'"
+  },
+  "keywords": [
+    "finance",
+    "pwa",
+    "stock-market",
+    "ai"
+  ],
+  "author": "Einstein",
+  "license": "MIT",
+  "devDependencies": {},
+  "dependencies": {}
+}

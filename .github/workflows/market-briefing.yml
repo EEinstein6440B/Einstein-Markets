@@ -1,0 +1,36 @@
+name: Generate Market Briefing
+
+on:
+  schedule:
+    # 6 AM ET (11 AM UTC) Monday-Friday
+    - cron: '0 11 * * 1-5'
+    # 4 PM ET (9 PM UTC) Monday-Friday
+    - cron: '0 21 * * 1-5'
+  workflow_dispatch:
+
+jobs:
+  generate-briefing:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Generate briefing
+        env:
+          FINNHUB_API_KEY: ${{ secrets.FINNHUB_API_KEY }}
+        run: node scripts/generate-briefing.js
+
+      - name: Commit briefing
+        run: |
+          git config --global user.email "action@github.com"
+          git config --global user.name "Market Briefing Bot"
+          git add data/briefing.json
+          git commit -m "chore: update market briefing $(date -u +'%Y-%m-%d %H:%M:%S UTC')" || echo "No changes to commit"
+          git push

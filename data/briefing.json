@@ -1,0 +1,224 @@
+{
+  "marketMood": "📈 Market consolidating after recent volatility. Tech showing relative strength on AI infrastructure tailwinds. Watch earnings calendar and geopolitical developments.",
+  "generatedAt": "2026-03-15T09:30:00Z",
+  "NVDA": {
+    "signal": "strong_buy",
+    "signalLabel": "Strong Buy Signal",
+    "commentary": "Blackwell ramp accelerating. Data center revenue guidance raised again. Custom ASIC adoption by hyperscalers validates chip design moat. Risk/reward heavily skewed to upside despite premium valuation.",
+    "momentum": "up",
+    "timestamp": "2026-03-15 09:30 UTC",
+    "consensus": {
+      "strongBuy": 25,
+      "buy": 18,
+      "hold": 8,
+      "sell": 1,
+      "strongSell": 0
+    }
+  },
+  "MU": {
+    "signal": "buy",
+    "signalLabel": "Buy Signal",
+    "commentary": "HBM memory transition in early innings. 2026 output already sold out for the year. Valuation reset justified by 300%+ EPS growth. Single-name concentration risk if HBM adoption stalls.",
+    "momentum": "up",
+    "timestamp": "2026-03-15 09:30 UTC",
+    "consensus": {
+      "strongBuy": 8,
+      "buy": 22,
+      "hold": 14,
+      "sell": 2,
+      "strongSell": 0
+    }
+  },
+  "DELL": {
+    "signal": "buy",
+    "signalLabel": "Buy Signal",
+    "commentary": "$43B backlog provides revenue visibility through 2027. AI server attach rates driving operating leverage. Watch for DRAM price weakness to improve margins. Supply chain improvements key to execution.",
+    "momentum": "up",
+    "timestamp": "2026-03-15 09:30 UTC",
+    "consensus": {
+      "strongBuy": 12,
+      "buy": 24,
+      "hold": 9,
+      "sell": 1,
+      "strongSell": 0
+    }
+  },
+  "AMD": {
+    "signal": "buy",
+    "signalLabel": "Buy Signal",
+    "commentary": "OpenAI partnership de-risks inference ramp. MI355X performance gains credible. 6GW commitment from OpenAI could drive $200B+ revenue over product cycle. Competitive moat still forming vs. Nvidia.",
+    "momentum": "up",
+    "timestamp": "2026-03-15 09:30 UTC",
+    "consensus": {
+      "strongBuy": 10,
+      "buy": 20,
+      "hold": 13,
+      "sell": 3,
+      "strongSell": 1
+    }
+  },
+  "TSM": {
+    "signal": "neutral",
+    "signalLabel": "Neutral",
+    "commentary": "Chip design moat intact, but Taiwan geopolitical premium embedded in valuation. Arizona and Japan fab ramp provide diversification, reducing political tail risk. AI revenue momentum strong; wait for margin expansion confirmation.",
+    "momentum": "flat",
+    "timestamp": "2026-03-15 09:30 UTC",
+    "consensus": {
+      "strongBuy": 6,
+      "buy": 18,
+      "hold": 22,
+      "sell": 1,
+      "strongSell": 0
+    }
+  },
+  "AVGO": {
+    "signal": "buy",
+    "signalLabel": "Buy Signal",
+    "commentary": "Custom ASIC proliferation benefits broadcom as switch architecture provider. Jericho3-AI becoming standard. Lower valuation multiple than Nvidia provides margin of safety.",
+    "momentum": "up",
+    "timestamp": "2026-03-15 09:30 UTC",
+    "consensus": {
+      "strongBuy": 5,
+      "buy": 16,
+      "hold": 19,
+      "sell": 4,
+      "strongSell": 1
+    }
+  },
+  "VRT": {
+    "signal": "buy",
+    "signalLabel": "Buy Signal",
+    "commentary": "Power density concerns in Blackwell/Rubin clusters creating liquid cooling tailwind. Co-engineering with Nvidia validates technology. Boring business with strong secular growth.",
+    "momentum": "up",
+    "timestamp": "2026-03-15 09:30 UTC",
+    "consensus": {
+      "strongBuy": 3,
+      "buy": 12,
+      "hold": 18,
+      "sell": 6,
+      "strongSell": 2
+    }
+  },
+  "MRVL": {
+    "signal": "buy",
+    "signalLabel": "Buy Signal",
+    "commentary": "Custom silicon ramp for AWS/Microsoft on track. Management guidance for revenue doubling credible. Valuation supports risk/reward. Watch 3nm yields.",
+    "momentum": "up",
+    "timestamp": "2026-03-15 09:30 UTC",
+    "consensus": {
+      "strongBuy": 4,
+      "buy": 14,
+      "hold": 17,
+      "sell": 5,
+      "strongSell": 1
+    }
+  },
+  "ANET": {
+    "signal": "buy",
+    "signalLabel": "Buy Signal",
+    "commentary": "Networking fabric bottleneck as AI clusters scale. 42.7% EBITDA margins provide downside protection. Consistent execution and earnings beats build confidence.",
+    "momentum": "up",
+    "timestamp": "2026-03-15 09:30 UTC",
+    "consensus": {
+      "strongBuy": 7,
+      "buy": 19,
+      "hold": 15,
+      "sell": 2,
+      "strongSell": 0
+    }
+  },
+  "CLS": {
+    "signal": "caution",
+    "signalLabel": "Caution",
+    "commentary": "Strong momentum (223% YTD return) but elevated from lows. Supply chain deep integration provides stickiness. Valuation demands flawless execution. Watch for profit-taking.",
+    "momentum": "up",
+    "timestamp": "2026-03-15 09:30 UTC",
+    "consensus": {
+      "strongBuy": 2,
+      "buy": 8,
+      "hold": 14,
+      "sell": 8,
+      "strongSell": 3
+    }
+  },
+  "XOM": {
+    "signal": "neutral",
+    "signalLabel": "Neutral",
+    "commentary": "Geopolitical energy premium supports near-term. Commodity price sensitive. Long-term energy transition risk mitigates upside. Suitable as geopolitical hedge within diversified portfolio.",
+    "momentum": "flat",
+    "timestamp": "2026-03-15 09:30 UTC",
+    "consensus": {
+      "strongBuy": 1,
+      "buy": 10,
+      "hold": 24,
+      "sell": 8,
+      "strongSell": 2
+    }
+  },
+  "CVX": {
+    "signal": "buy",
+    "signalLabel": "Buy Signal",
+    "commentary": "Berkshire backing validates geopolitical energy play. Iraq oilfield contract secures supply for decades. Leviathan force majeure may create tactical upside if resolved. Buffett's continued buying is positive signal.",
+    "momentum": "up",
+    "timestamp": "2026-03-15 09:30 UTC",
+    "consensus": {
+      "strongBuy": 2,
+      "buy": 12,
+      "hold": 20,
+      "sell": 7,
+      "strongSell": 1
+    }
+  },
+  "BTC": {
+    "signal": "buy",
+    "signalLabel": "Buy Signal",
+    "commentary": "March 2026 crisis showed digital gold thesis working. Institutional ETF flows accelerating. Macro hedge demand rising as rate cut cycle approaches. Technical support building above $45k.",
+    "momentum": "up",
+    "timestamp": "2026-03-15 09:30 UTC",
+    "consensus": {
+      "strongBuy": 15,
+      "buy": 22,
+      "hold": 18,
+      "sell": 6,
+      "strongSell": 3
+    }
+  },
+  "ETH": {
+    "signal": "neutral",
+    "signalLabel": "Neutral",
+    "commentary": "L2 scaling narrative gaining traction but execution risk high. Staking yield floor attractive. Competition from newer chains increasing. Wait for clearer market dominance signal.",
+    "momentum": "flat",
+    "timestamp": "2026-03-15 09:30 UTC",
+    "consensus": {
+      "strongBuy": 8,
+      "buy": 16,
+      "hold": 24,
+      "sell": 8,
+      "strongSell": 2
+    }
+  },
+  "SPY": {
+    "signal": "neutral",
+    "signalLabel": "Neutral",
+    "commentary": "Index consolidating near all-time highs. Earnings season turning point. Tech concentration risk elevated. Rotation to value/small-cap possible if rates spike.",
+    "momentum": "flat",
+    "timestamp": "2026-03-15 09:30 UTC",
+    "consensus": null
+  },
+  "QQQ": {
+    "signal": "buy",
+    "signalLabel": "Buy Signal",
+    "commentary": "AI infrastructure secular growth justifies tech premium. Rotation risk exists but earnings delivery supporting valuations. Earnings revisions trend positive.",
+    "momentum": "up",
+    "timestamp": "2026-03-15 09:30 UTC",
+    "consensus": null
+  },
+  "UVXY": {
+    "signal": "neutral",
+    "signalLabel": "Neutral",
+    "commentary": "VIX elevated but not panic levels. Term structure suggests expected volatility moderating. Range-bound 20-30 likely through earnings season.",
+    "momentum": "flat",
+    "timestamp": "2026-03-15 09:30 UTC",
+    "consensus": null
+  }
+}

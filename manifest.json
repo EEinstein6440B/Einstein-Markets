@@ -1,24 +1,46 @@
 {
   "name": "Einstein Markets",
-  "short_name": "Markets",
-  "description": "Personal investment dashboard for Einstein",
+  "short_name": "EinMarkets",
+  "description": "AI-powered financial dashboard for intelligent investing",
+  "version": "2.0",
   "start_url": "./index.html",
+  "scope": "./",
   "display": "standalone",
-  "background_color": "#0a0e17",
+  "orientation": "portrait-primary",
   "theme_color": "#0a0e17",
-  "orientation": "portrait",
+  "background_color": "#0a0e17",
   "icons": [
     {
-      "src": "icon-192.png",
+      "src": "./assets/icon-192.png",
       "sizes": "192x192",
       "type": "image/png",
-      "purpose": "any maskable"
+      "purpose": "any"
     },
     {
-      "src": "icon-512.png",
+      "src": "./assets/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "./assets/icon-512.png",
       "sizes": "512x512",
       "type": "image/png",
-      "purpose": "any maskable"
+      "purpose": "any"
+    },
+    {
+      "src": "./assets/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "categories": ["finance", "productivity"],
+  "screenshots": [
+    {
+      "src": "./assets/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
     }
   ]
 }
